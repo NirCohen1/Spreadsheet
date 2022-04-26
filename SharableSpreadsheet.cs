@@ -3,6 +3,11 @@ using System.IO;
 using System.Threading;
 using System.Collections.Generic;
 
+//Lock all cells is not allowed.
+//Lock every cell is not allowed.
+
+
+
 class SharableSpreadsheet
 {
     string[,] spreadsheet;
