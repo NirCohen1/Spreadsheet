@@ -1,0 +1,15 @@
+C:\Users\nirco\source\repos\Simulator\Simulator\bin\Debug\net5.0\Simulator.exe
+C:\Users\nirco\source\repos\Simulator\Simulator\bin\Debug\net5.0\Simulator.deps.json
+C:\Users\nirco\source\repos\Simulator\Simulator\bin\Debug\net5.0\Simulator.runtimeconfig.json
+C:\Users\nirco\source\repos\Simulator\Simulator\bin\Debug\net5.0\Simulator.runtimeconfig.dev.json
+C:\Users\nirco\source\repos\Simulator\Simulator\bin\Debug\net5.0\Simulator.dll
+C:\Users\nirco\source\repos\Simulator\Simulator\bin\Debug\net5.0\ref\Simulator.dll
+C:\Users\nirco\source\repos\Simulator\Simulator\bin\Debug\net5.0\Simulator.pdb
+C:\Users\nirco\source\repos\Simulator\Simulator\obj\Debug\net5.0\Simulator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nirco\source\repos\Simulator\Simulator\obj\Debug\net5.0\Simulator.AssemblyInfoInputs.cache
+C:\Users\nirco\source\repos\Simulator\Simulator\obj\Debug\net5.0\Simulator.AssemblyInfo.cs
+C:\Users\nirco\source\repos\Simulator\Simulator\obj\Debug\net5.0\Simulator.csproj.CoreCompileInputs.cache
+C:\Users\nirco\source\repos\Simulator\Simulator\obj\Debug\net5.0\Simulator.dll
+C:\Users\nirco\source\repos\Simulator\Simulator\obj\Debug\net5.0\ref\Simulator.dll
+C:\Users\nirco\source\repos\Simulator\Simulator\obj\Debug\net5.0\Simulator.pdb
+C:\Users\nirco\source\repos\Simulator\Simulator\obj\Debug\net5.0\Simulator.genruntimeconfig.cache
