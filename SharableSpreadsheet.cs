@@ -46,19 +46,14 @@ class SharableSpreadsheet
         semaphore_cols = new List<SemaphoreSlim>();
 
         int n = 0;
-        for (int i = 0; i < m_rows; i++)
-            for (int j = 0; j < m_cols; j++)
-                spreadsheet[i, j] = "testcell" + (n++).ToString();
-
-        for (int i = 0; i < m_rows; i++)
-        {
+        for (int i = 0; i < m_rows; i++){
             rows_mutex.Add(new Mutex());
             semaphore_rows.Add(new SemaphoreSlim(m_users, m_users));
-        }
-        for (int i = 0; i < m_cols; i++)
-        {
-            cols_mutex.Add(new Mutex());
-            semaphore_cols.Add(new SemaphoreSlim(m_users, m_users));
+            for (int j = 0; j < m_cols; j++){
+                spreadsheet[i, j] = "testcell" + (n++).ToString();
+                cols_mutex.Add(new Mutex());
+                semaphore_cols.Add(new SemaphoreSlim(m_users, m_users));
+            }
         }
     }
 
