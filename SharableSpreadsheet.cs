@@ -89,12 +89,10 @@ class SharableSpreadsheet
         //one more user
 
         //lock writing, exchange and searching to rows and cols
-        //exchange.WaitOne();
         current_users.Wait();
         rows_mutex[row].WaitOne();
         cols_mutex[col].WaitOne();
-        //exchange.ReleaseMutex();
-
+        
         //waiting for all readers to finish. take whatever he can from the semaphore, if he reach to its end(m_users) it's mean that there are no readers.
         for (int i = 0; i < m_users; i++)
             semaphore_rows[row].Wait();
@@ -160,11 +158,6 @@ class SharableSpreadsheet
         rows_mutex[row1].WaitOne();
         rows_mutex[row2].WaitOne();
 
-        //for (int i = 0; i < m_users; i++)
-        //    semaphore_rows[row1].Wait();
-        //for (int i = 0; i < m_users; i++)
-        //    semaphore_rows[row2].Wait();
-
         // exchange the content of row1 and row2
         string[] temp = new string[m_cols];
         for (int i = 0; i < m_cols; i++)
@@ -173,9 +166,6 @@ class SharableSpreadsheet
             spreadsheet[row1, i] = spreadsheet[row2, i];
             spreadsheet[row2, i] = temp[i];
         }
-
-        //semaphore_rows[row1].Release(m_users);
-        //semaphore_rows[row2].Release(m_users);
 
         rows_mutex[row1].ReleaseMutex();
         rows_mutex[row2].ReleaseMutex();
@@ -199,12 +189,6 @@ class SharableSpreadsheet
         cols_mutex[col1].WaitOne();
         cols_mutex[col2].WaitOne();
 
-        ////acquire all the semaphore from readers
-        //for (int i = 0; i < m_users; i++)
-        //{
-        //    semaphore_cols[col1].Wait();
-        //    semaphore_cols[col2].Wait();
-        //}
 
         // exchange the content of col1 and col2
         string[] temp = new string[m_rows];
@@ -214,9 +198,6 @@ class SharableSpreadsheet
             spreadsheet[i, col1] = spreadsheet[i, col2];
             spreadsheet[i, col2] = temp[i];
         }
-
-        //semaphore_cols[col1].Release(m_users);
-        //semaphore_cols[col2].Release(m_users);
 
         exchange.ReleaseMutex();
 
@@ -262,10 +243,10 @@ class SharableSpreadsheet
     {
         if (col < 0 || col >= m_cols)
             return false;
-        //exchange.WaitOne();
+        
         current_users.Wait();
         searchers.Wait();
-        //exchange.ReleaseMutex();
+        
         // perform search in specific col
         for (int i = 0; i < m_rows; i++)
         {
